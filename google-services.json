@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "997505899263",
+    "firebase_url": "https://rccgna-ppforum.firebaseio.com",
+    "project_id": "rccgna-ppforum",
+    "storage_bucket": "rccgna-ppforum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:997505899263:android:d61a47469414cc30fa8aca",
+        "android_client_info": {
+          "package_name": "com.ppforum.bj"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "997505899263-mmq0d69u5bco2ch19ma6r6hljbh0sc4m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC68NwzxAeZvSXjodmu6fommPQ9PXBZChY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "997505899263-mmq0d69u5bco2ch19ma6r6hljbh0sc4m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

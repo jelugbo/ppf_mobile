@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end">
+        RCCGNA PROVINCIAL <br> PASTOR'S FORUM
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <iframe id="modalFrame" class="centerme"  [src]="clipSrc | safe"  allowfullscreen></iframe>
+</ion-content>

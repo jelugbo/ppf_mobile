@@ -1,0 +1,7 @@
+{
+  "name": "ppforum",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

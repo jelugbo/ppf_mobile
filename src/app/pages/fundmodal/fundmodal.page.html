@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end">
+        RCCGNA PROVINCIAL <br> PASTOR'S FORUM
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item color="light">
+      <div class="ion-text-center center-me">
+        <h4>FUND RAISING FORM</h4>
+      </div>
+    </ion-item>
+    <form [formGroup]="fundsForm">
+      <ion-item>
+        <ion-label position="stacked">Title:</ion-label>
+        <ion-input formControlName="Title" type="text" [class.invalid]="!fundsForm.controls.Title.valid && (fundsForm.controls.Title.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!fundsForm.controls.Title.valid  && (fundsForm.controls.Title.dirty || submitAttempt)">
+        <p>Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Description:</ion-label>
+        <ion-textarea formControlName="Description" type="text" [class.invalid]="!fundsForm.controls.Description.valid && (fundsForm.controls.Description.dirty || submitAttempt)"></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="!fundsForm.controls.Description.valid  && (fundsForm.controls.Description.dirty || submitAttempt)">
+        <p>Description can not be empty.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">URL / Link:</ion-label>
+        <ion-textarea formControlName="Link" type="text" [class.invalid]="!fundsForm.controls.Link.valid && (fundsForm.controls.Link.dirty || submitAttempt)"></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="!fundsForm.controls.Link.valid  && (fundsForm.controls.Link.dirty || submitAttempt)">
+        <p>URL should not be more that 50 characters.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Expiry Date:</ion-label>
+        <ion-datetime formControlName="ExpiryDate" [class.invalid]="!fundsForm.controls.ExpiryDate.valid && (fundsForm.controls.ExpiryDate.dirty || submitAttempt)"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="!fundsForm.controls.ExpiryDate.valid  && (fundsForm.controls.ExpiryDate.dirty || submitAttempt)">
+        <p>Please select a date.</p>
+      </ion-item>
+
+      <ion-item [hidden]="true">
+        <ion-label position="stacked">ID:</ion-label>
+        <ion-input formControlName="Id" type="text"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-button color="light" expand="block" slot="start" (click)="dismiss()">
+              Go Back
+            </ion-button>
+          </section>
+        </ion-col>
+        <ion-col>
+          <section>
+            <ion-button color="light" expand="block" slot="start" (click)="dbSave()">
+              Save
+            </ion-button>
+          </section>
+        </ion-col>
+      </ion-row>
+    </form>
+
+  </ion-list>
+</ion-content>

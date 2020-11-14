@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end">
+        RCCGNA PROVINCIAL <br> PASTOR'S FORUM
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-row>
+    <ion-col size="12">
+      <ion-avatar style="margin: auto"><img src="{{getImage(item.Picture)}}"></ion-avatar>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col size="4" offset="2">
+        <ion-button shape="round" expand="block" size="small" color="light" href="tel:{{item.Phone}}">
+          <ion-icon slot="start" name="call-outline"></ion-icon>Call
+        </ion-button>
+      </ion-col>
+      <ion-col size="4">
+        <ion-button shape="round" expand="block" size="small" color="light" href="mailto:{{item.Email}}">
+          <ion-icon slot="start" name="mail-outline"></ion-icon>Email
+        </ion-button>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-item>
+        <ion-icon name="person-outline" slot="start" class="ion-align-items-start"></ion-icon>
+        <ion-label class="ion-padding-top">
+          <p class="ion-padding-start">Name</p>
+          <p class="ion-padding-start">{{item.FirstName}} {{item.LastName}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-item>
+        <ion-icon name="call-outline" slot="start" class="ion-align-items-start"></ion-icon>
+        <ion-label class="ion-padding-top">
+          <p class="ion-padding-start">Phone Number</p>
+          <p class="ion-padding-start">{{item.Phone}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-item>
+        <ion-icon name="mail-outline" slot="start" class="ion-align-items-start"></ion-icon>
+        <ion-label class="ion-padding-top">
+          <p class="ion-padding-start">Email</p>
+          <p class="ion-padding-start">{{item.Email}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-item>
+        <ion-icon name="location-outline" slot="start" class="ion-align-items-start"></ion-icon>
+        <ion-label class="ion-padding-top">
+          <p class="ion-padding-start">Church Address</p>
+          <p class="ion-padding-start">RCCG {{item.Parish}}</p>
+          <p class="ion-padding-start">{{item.City}} {{item.State}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col size="12">
+      <ion-item>
+        <ion-icon name="person-outline" slot="start" class="ion-align-items-start"></ion-icon>
+        <ion-label class="ion-padding-top">
+          <p class="ion-padding-start">Zone / Office</p>
+          <p class="ion-padding-start">{{item.Region}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-list>
+</ion-content>

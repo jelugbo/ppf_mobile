@@ -1,0 +1,175 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end">
+        RCCGNA PROVINCIAL <br> PASTOR'S FORUM
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top" >
+    <img src="assets/img/settings.jpg" alt="">
+    <p style="line-height: 2vh; font-size: 24px; text-align: center">UPDATE PROFILE</p>
+    <ion-text class="ion-text-center" color="danger"><p>click on each textbox to update it's value</p></ion-text>
+    <form *ngIf="profileForm" [formGroup]="profileForm">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="4">
+          <ion-item class="ion-text-wrap" lines="none">
+            <ion-thumbnail slot="start"><img src="{{getImage(Picture)}}"></ion-thumbnail>
+          </ion-item>
+        </ion-col>
+        <ion-col size="8">
+          <ion-item class="ion-text-wrap small-pad-top" lines="none">
+            <ion-button slot="end" color="ppf-light" (click)="selectImage()">
+              <ion-icon slot="icon-only" name="camera"></ion-icon>
+              Update Picture
+            </ion-button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">First Name:</ion-label>
+            <ion-input formControlName="FirstName" type="text" [class.invalid]="!profileForm.controls.FirstName.valid && (profileForm.controls.FirstName.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.FirstName.valid  && (profileForm.controls.FirstName.dirty || submitAttempt)">
+            <p>Please enter first name</p>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Last Name:</ion-label>
+            <ion-input formControlName="LastName" type="text" [class.invalid]="!profileForm.controls.LastName.valid && (profileForm.controls.LastName.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.LastName.valid  && (profileForm.controls.LastName.dirty || submitAttempt)">
+            <p>Please enter last name</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Email:</ion-label>
+            <ion-input formControlName="Email" type="email" [class.invalid]="!profileForm.controls.Email.valid && (profileForm.controls.Email.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.Email.valid  && (profileForm.controls.Email.dirty || submitAttempt)">
+            <p>Please enter a valid email address.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Phone:</ion-label>
+            <ion-input formControlName="Phone" type="text" [class.invalid]="!profileForm.controls.Phone.valid && (profileForm.controls.Phone.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.Phone.valid  && (profileForm.controls.Phone.dirty || submitAttempt)">
+            <p>Please enter valid phone number</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Password:</ion-label>
+            <ion-input formControlName="Password" type="password" [class.invalid]="!profileForm.controls.Password.valid && (profileForm.controls.Password.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.Password.valid  && (profileForm.controls.Password.dirty || submitAttempt)">
+            <p>Please enter password.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Confirm Password:</ion-label>
+            <ion-input formControlName="ConfirmPassword" type="password" [class.invalid]="!profileForm.controls.ConfirmPassword.valid && (profileForm.controls.ConfirmPassword.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.ConfirmPassword.valid  && (profileForm.controls.ConfirmPassword.dirty || submitAttempt)">
+            <p>Password must match.</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Date of Birth:</ion-label>
+            <ion-datetime displayFormat="MMMM DD"  formControlName="Dob" [class.invalid]="!profileForm.controls.Dob.valid && (profileForm.controls.Dob.dirty || submitAttempt)"></ion-datetime>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.Dob.valid  && (profileForm.controls.Dob.dirty || submitAttempt)">
+            <p>Please enter a valid Date.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Wedding Anniversary:</ion-label>
+            <ion-datetime displayFormat="MMMM DD" formControlName="Wedding" [class.invalid]="!profileForm.controls.Wedding.valid && (profileForm.controls.Wedding.dirty || submitAttempt)"></ion-datetime>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.Wedding.valid  && (profileForm.controls.Wedding.dirty || submitAttempt)">
+            <p>Please enter valid date</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Region:</ion-label>
+            <ion-input formControlName="Region" type="text" [class.invalid]="!profileForm.controls.Region.valid && (profileForm.controls.Region.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">Parish:</ion-label>
+            <ion-input formControlName="Parish" type="text" [class.invalid]="!profileForm.controls.Parish.valid && (profileForm.controls.Parish.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="stacked">Address:</ion-label>
+            <ion-textarea formControlName="Address" type="text" [class.invalid]="!profileForm.controls.Address.valid && (profileForm.controls.Address.dirty || submitAttempt)"></ion-textarea>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.Address.valid  && (profileForm.controls.Address.dirty || submitAttempt)">
+            <p>Please enter an address</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">City:</ion-label>
+            <ion-input formControlName="City" type="text" [class.invalid]="!profileForm.controls.City.valid && (profileForm.controls.City.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.City.valid  && (profileForm.controls.City.dirty || submitAttempt)">
+            <p>Please enter a value for city.</p>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6">
+          <ion-item>
+            <ion-label position="stacked">State:</ion-label>
+            <ion-input formControlName="State" type="text" [class.invalid]="!profileForm.controls.State.valid && (profileForm.controls.State.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="!profileForm.controls.State.valid  && (profileForm.controls.State.dirty || submitAttempt)">
+            <p>Please enter value for state</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12" class="ion-text-center">
+          <section>
+            <ion-button color="light" slot="start" (click)="update(currImage)">
+              Update
+            </ion-button>
+          </section>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </ion-list>
+</ion-content>

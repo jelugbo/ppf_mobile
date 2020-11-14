@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end">
+        RCCGNA PROVINCIAL <br> PASTOR'S FORUM
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="70vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div *ngFor="let post of posts">
+    <ion-card>
+      <ion-img src="{{post.snippet.thumbnails.high.url}}"></ion-img>
+      <ion-card-content>
+        <ion-card-title>
+          <h4>{{post.snippet.title}}</h4>
+        </ion-card-title>
+        <ion-button expand="full" color="ppforum" (click)="playVideo(post)">
+          <ion-icon slot="start" name="play"></ion-icon>
+          Play Video
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div>
+  </div>
+</ion-content>
