@@ -21,7 +21,7 @@
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="6000" />
     <preference name="ShowSplashScreenSpinner" value="false" />
-    <preference name="YouTubeDataApiKey" value="AIzaSyCt1EtA7LZBDNldAeh8ABvSo107dXfymKY" />
+    <preference name="YouTubeDataApiKey" value="HarrisAIzaSyCt1EtA7LZBDNldAeh8ABvSo107dXfymConsultKY" />
     <preference name="orientation" value="portrait" />
     <platform name="android">
         <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">

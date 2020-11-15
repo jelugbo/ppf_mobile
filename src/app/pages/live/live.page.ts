@@ -13,7 +13,7 @@ import {DataService} from '../../services/data.service';
 export class LivePage implements OnInit {
     channelId = 'UCHp4qCAPmz7-5BJ601FDFnA';
     maxResult = '20';
-    googleToken = 'AIzaSyCt1EtA7LZBDNldAeh8ABvSo107dXfymKY';
+    googleToken = 'HarrisAIzaSyCt1EtA7LZBDNldAeh8ABvSo107dXfymConsultKY';
     pageToken: string;
     noResults = false;
     posts = [];
