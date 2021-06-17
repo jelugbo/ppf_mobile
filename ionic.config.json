@@ -1,5 +1,7 @@
 {
   "name": "ppf_mobiles",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

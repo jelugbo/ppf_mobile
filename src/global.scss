@@ -24,3 +24,289 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+.scroll-content {
+  padding-bottom: 0 !important;
+}
+
+
+.icon-row {
+  -webkit-align-items: center;
+}
+/*Metro Styling*/
+.font-blue,       .font-blue-link a         {color: #2d89ef;}
+.font-blueLight,  .font-blueLight-link a    {color: #eff4ff;}
+.font-blueDark,   .font-blueDark-link a     {color: #2b5797;}
+.font-green,      .font-green-link a        {color: #00a300;}
+.font-greenLight, .font-greenLight-link a   {color: #99b433;}
+.font-greenDark,  .font-greenDark-link a    {color: #1e7145;}
+.font-red,        .font-red-link a          {color: #b91d47;}
+.font-yellow,     .font-yellow-link a       {color: #ffc40d;}
+.font-orange,     .font-orange-link a       {color: #e3a21a;}
+.font-orangeDark, .font-orangeDark-link a   {color: #da532c;}
+.font-pink,       .font-pink-link a         {color: #9f00a7;}
+.font-pinkDark,   .font-pinkDark-link a     {color: #7e3878;}
+.font-purple,     .font-purple-link a       {color: #603cba;}
+.font-darken,     .font-darken-link a       {color: #1d1d1d;}
+.font-lighten,    .font-lighten-link a      {color: #d5e7ec;}
+.font-white,      .font-white-link a        {color: #ffffff;}
+.font-grayDark,   .font-grayDark-link a     {color: #525252;}
+.bg-blue       {background-color: #2d89ef;}
+.bg-blueLight  {background-color: #eff4ff;}
+.bg-blueDark   {background-color: #2b5797;}
+.bg-green      {background-color: #00a300;}
+.bg-greenLight {background-color: #99b433;}
+.bg-greenDark  {background-color: #1e7145;}
+.bg-red        {background-color: #b91d47;}
+.bg-yellow     {background-color: #ffc40d;}
+.bg-orange     {background-color: #e3a21a;}
+.bg-orangeDark {background-color: #da532c;}
+.bg-pink       {background-color: #9f00a7;}
+.bg-pinkDark   {background-color: #7e3878;}
+.bg-purple     {background-color: #603cba;}
+.bg-darken     {background-color: #1d1d1d;}
+.bg-lighten    {background-color: #d5e7ec;}
+.bg-white      {background-color: #ffffff;}
+.bg-facebook   {background-color: #3b5998;}
+.bg-twitter    {background-color: #00acee;}
+.bg-instagram     {background-color: #E1306C;}
+.bg-grayDark   {background-color: #525252;}
+
+.li-ionic4-datePicker {
+  .modal-wrapper {
+    --ion-color-primary: #FA3129; // This Variable used for the change of colour ion-datepicker only.
+    --ion-color-primary-tint: rgb(250,49,41); // This Variable changes the tint colour of background when click button.
+    ion-button {
+      --ion-color-primary: #FA3129; // This Variable used for the change colour of buttons only.
+      --ion-color-primary-tint: #fb463e; // This Variable changes the tint color of background when click buttons.
+      --border-radious: 0px; // This Variable changes the border radious of buttons.
+      // button customization css write here...
+    }
+  }
+}
+
+.truncates {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  //white-space: nowrap;
+  max-height: 55px;
+}
+
+.truncate {
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+}
+
+.center-me {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.remove-top{
+  padding-top: 0px;
+}
+
+.head-text{
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+/*Grid Styling*/
+.larger {
+  font-size: 20vw !important;
+  height: inherit !important;
+  text-align: center;
+  color: white;
+  display: block;
+  position: relative;
+  top: 50%;
+}
+
+.largess {
+  font-size: 4vw !important;
+  height: inherit !important;
+  text-align: center;
+  color: black;
+  display: block;
+  position: relative;
+  top: 15%;
+}
+
+.large {
+  font-size: 10vw !important;
+  height: auto !important;
+  text-align: center;
+  display: inline-block;
+  color: white;
+  clear: both;
+  white-space:nowrap
+}
+.flexRow{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.middlelogo {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.flexCol{
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: center;
+}
+.flexItem{
+  flex: 0.5;
+  width: 22vw;
+  height: 16vh;
+  margin: 1vw;
+}
+.small-pad-left{
+  padding-left: 4px;
+}
+.small-pad-right{
+  padding-right: 4px;
+}
+.small-pad-top{
+  padding-top: 4px;
+}
+.small-pad-bottom{
+  padding-bottom: 4px;
+}
+
+.bg-events {
+  background: linear-gradient(rgba(3, 34, 53, 0.81), rgba(3, 34, 53, 0.81)) ,
+  url('./assets/img/bg_events.jpeg') no-repeat;
+  background-size: 100%;
+}
+
+.bg-credits {
+  background: linear-gradient(rgba(46, 3, 53, 0.81), rgba(46, 3, 53, 0.81)) ,
+  url('./assets/img/credit_union.jpeg') no-repeat;
+  background-size: 100%;
+}
+
+.bg-welfare {
+  background: linear-gradient(rgba(175, 28, 37, 0.86), rgba(175, 28, 37, 0.86)) ,
+  url('./assets/img/bg_helpdesk.jpeg') no-repeat;
+  background-size: 100%;
+}
+
+.bg-meeting {
+  background: linear-gradient(rgba(174, 168, 29, 0.86), rgba(174, 168, 29, 0.86)) ,
+  url('./assets/img/bg_meeting.jpeg') no-repeat;
+  background-size: 100%;
+}
+
+.bg-livestream {
+  background: linear-gradient(rgba(65, 142, 53, 0.86), rgba(65, 142, 53, 0.86)) ,
+  url('./assets/img/bg_livestream.jpeg') no-repeat;
+  background-size: 100%;
+}
+.bg-socials {
+  background: linear-gradient(rgba(142, 123, 53, 0.86), rgba(142, 123, 53, 0.86)) ,
+  url('./assets/img/bg_asset.jpeg') no-repeat;
+  background-size: 100%;
+}
+
+.bg-give {
+  background: linear-gradient(rgba(1, 27, 43, 0.86), rgba(1, 27, 43, 0.86)) ,
+  url('./assets/img/bg_give.jpeg') no-repeat;
+  background-size: 100%;
+}
+
+.bg-helpdesk {
+  background: linear-gradient(rgba(13, 126, 106, 0.86), rgba(13, 126, 106, 0.86)) ,
+  url('./assets/img/bg_helpdesks.jpeg') no-repeat;
+  background-size: 100%;
+}
+
+.bg-asset {
+  background: linear-gradient(rgba(43, 21, 1, 0.86), rgba(43, 21, 1, 0.86)) ,
+  url('./assets/img/bg_asset.jpeg') no-repeat;
+  background-size: 100%;
+}
+.tab-text{
+  color:white;
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
+  font-size: 1.3em;
+}
+.flexItemBig{
+  flex: 1;
+  width: 48vw;
+  height: 18vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //border-radius: 11px;
+}
+
+.flexItemX{
+  flex: 1;
+  height: 14vh;
+  display: flex;
+  position: relative;
+}
+
+.flexItemWide{
+  flex: 1;
+  height: 20vh;
+}
+.flexItemWidth{
+  flex: 1;
+  width: 98vw;
+}
+
+a>h4{
+  margin-top: -2px;
+  font-size: 1.6rem;
+}
+
+a>h6{
+  margin-top: -1px;
+  font-family: "Kozuka Gothic Pr6N B", serif;
+  font-size: 1.6rem;
+}
+
+scroll-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.long-title {
+  //font-size: 1.0em;
+  text-align: right;
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+.invalid {
+  border: 1px solid #ea6153;
+}
+
+ion-grid {
+  padding: 0;
+  height: 100%;
+}
+@media all and (orientation:landscape){
+  ion-row {
+    flex: 1;
+  }
+}
+
