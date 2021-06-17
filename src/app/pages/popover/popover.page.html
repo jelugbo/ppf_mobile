@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end head-text">
+        RCCG<br>AMERICAS
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="100vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <!--  <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>-->
+  <ion-list class="remove-top">
+<!--    <img class="middlelogo" src="assets/img/bible.jpg" alt="">-->
+    <ion-item color="light">
+      <div class="ion-text-center center-me">
+        <h4>New Note</h4>
+      </div>
+    </ion-item>
+    <form [formGroup]="noteForm">
+      <ion-item>
+        <ion-label position="stacked">Title:</ion-label>
+        <ion-input formControlName="topic" type="text" [class.invalid]="!noteForm.controls.topic.valid && (noteForm.controls.topic.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!noteForm.controls.topic.valid  && (noteForm.controls.topic.dirty || submitAttempt)">
+        <p>Please enter a valid title.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Content:</ion-label>
+        <ion-textarea formControlName="content" type="text" [class.invalid]="!noteForm.controls.content.valid && (noteForm.controls.content.dirty || submitAttempt)"></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="!noteForm.controls.content.valid  && (noteForm.controls.content.dirty || submitAttempt)">
+        <p>Content can not be empty.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Date</ion-label>
+        <ion-datetime formControlName="date" value="1990-02-19"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="!noteForm.controls.date.valid  && (noteForm.controls.date.dirty || submitAttempt)">
+        <p>Please enter a date.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Time</ion-label>
+        <ion-datetime formControlName="time" display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="!noteForm.controls.time.valid  && (noteForm.controls.time.dirty || submitAttempt)">
+        <p>Please enter a time.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Venue:</ion-label>
+        <ion-input formControlName="venue" type="text" [class.invalid]="!noteForm.controls.venue.valid && (noteForm.controls.venue.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!noteForm.controls.venue.valid  && (noteForm.controls.venue.dirty || submitAttempt)">
+        <p>Please enter a venue.</p>
+      </ion-item>
+      <ion-item [hidden]="true">
+        <ion-label position="stacked">ID:</ion-label>
+        <ion-input formControlName="id" type="text"></ion-input>
+      </ion-item>
+      <ion-item [hidden]="true">
+        <ion-label position="stacked">Date Created:</ion-label>
+        <ion-input formControlName="date" type="text"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-button color="ppforum" expand="block" slot="start" (click)="dismiss()">
+              Go Back
+            </ion-button>
+          </section>
+        </ion-col>
+        <ion-col>
+          <section>
+            <ion-button color="light" expand="block" slot="start" (click)="dbSave()">
+              Save Note
+            </ion-button>
+          </section>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>

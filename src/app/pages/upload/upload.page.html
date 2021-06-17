@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end head-text">
+        RCCG<br>AMERICAS
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="100vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item color="light">
+      <div class="ion-text-center center-me">
+        <h4>New Give Away Item</h4>
+      </div>
+    </ion-item>
+    <form [formGroup]="assetForm">
+      <ion-item>
+        <ion-label position="stacked">Item Name:</ion-label>
+        <ion-input formControlName="Title" type="text" [class.invalid]="!assetForm.controls.Title.valid && (assetForm.controls.Title.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!assetForm.controls.Title.valid  && (assetForm.controls.Title.dirty || submitAttempt)">
+        <p>Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Description:</ion-label>
+        <ion-textarea formControlName="Description" type="text" [class.invalid]="!assetForm.controls.Description.valid && (assetForm.controls.Description.dirty || submitAttempt)"></ion-textarea>
+      </ion-item>
+      <ion-item *ngIf="!assetForm.controls.Description.valid  && (assetForm.controls.Description.dirty || submitAttempt)">
+        <p>Description can not be empty.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Expiry Date:</ion-label>
+        <ion-datetime formControlName="ExpiryDate" [class.invalid]="!assetForm.controls.ExpiryDate.valid && (assetForm.controls.ExpiryDate.dirty || submitAttempt)"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="!assetForm.controls.ExpiryDate.valid  && (assetForm.controls.ExpiryDate.dirty || submitAttempt)">
+        <p>Please select a date.</p>
+      </ion-item>
+
+      <ion-item [hidden]="true">
+        <ion-label position="stacked">ID:</ion-label>
+        <ion-input formControlName="Id" type="text"></ion-input>
+      </ion-item>
+      <div *ngFor="let img of images; index as pos" >
+        <ion-item text-wrap>
+          <ion-thumbnail slot="start">
+            <ion-img [src]="img.path"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            {{ img.name }}
+          </ion-label>
+          <!--      <ion-button slot="end" fill="clear" (click)="startUpload(img)">
+                  <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+                </ion-button>-->
+          <ion-button slot="end" fill="clear" (click)="deleteImage(img, pos)">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </div>
+      <ion-row class="ion-padding">
+        <ion-col>
+          <ion-button fill="clear" expand="full" color="ppforum" (click)="selectImage()">
+            <ion-icon slot="start" name="camera"></ion-icon>
+            Upload Image</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <section>
+            <ion-button color="light" expand="block" slot="start" (click)="dismiss()">
+              Go Back
+            </ion-button>
+          </section>
+        </ion-col>
+        <ion-col>
+          <section>
+            <ion-button color="light" expand="block" slot="start" (click)="startUpload(currImage)">
+              <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+              Save
+            </ion-button>
+          </section>
+        </ion-col>
+      </ion-row>
+    </form>
+
+  </ion-list>
+</ion-content>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">rccgnappf.org</domain>
+        <domain includeSubdomains="true">rccgamericas.org</domain>
+        <domain includeSubdomains="true">rccgna.org</domain>
+        <domain includeSubdomains="true">rccgamericas.app</domain>
+        <domain includeSubdomains="true">redeemerfcu.org</domain>
+    </domain-config>
+</network-security-config>

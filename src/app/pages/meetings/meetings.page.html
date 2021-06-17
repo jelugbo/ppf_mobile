@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end head-text">
+        RCCG<br>AMERICAS
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="100vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list class="remove-top">
+    <img src="assets/img/meeting.jpg" alt="">
+    <ion-item color="light">
+      <ion-button fill="clear" (click)='goBack()'>
+        <ion-icon slot="icon-only" name="caret-back-circle-outline" color="dark"></ion-icon>
+      </ion-button>
+      <div class="ion-text-center center-me">
+        <h4>{{getMon(dates) +' '+dates.getFullYear()}}</h4>
+      </div>
+      <ion-button slot="end" fill="clear" (click)='goNext()'>
+        <ion-icon slot="icon-only" name="caret-forward-circle-outline" color="dark"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <!--        <img class="middlelogo" src="assets/img/Events.png" alt=""> {{item.images.imageMedium}}-->
+    <div *ngIf="showEvent">
+      <section *ngFor="let item of itemList | keyvalue" class="card item-avatar item-text-wrap">
+        <!-- <img ng-src="http://7thcolonnade.com/{{item.imageSmall}}" alt="{{item.name}} Photo"> -->
+        <ion-row>
+          <ion-col size="3">
+            <ion-avatar class="ion-padding-start">
+              <app-bj-avatar  charCount="3" height="100px" width="100px" numData="{{getNum(item.key)}}" textData="{{getDay(item.key)}}" shape="round"></app-bj-avatar>
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="9">
+            <div *ngFor="let tins of item.value" class="ion-padding-bottom" lines="none">
+              <ion-label >
+                <p style="font-weight: bolder">{{tins.Title}}</p>
+                <p> {{ tins.StartTime }} - {{ tins.EndTime}} </p>
+              </ion-label>
+              <ion-row>
+                <ion-col size="5">
+                  <ion-button shape="round" expand="block" size="small" color="light" (click)="openEmbed(item.Link)">Register</ion-button>
+                </ion-col>
+                <ion-col size="5">
+                  <ion-button offset="2" shape="round" expand="block" size="small" color="light" (click)="itemTapped(item)">Details</ion-button>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-col>
+        </ion-row>
+
+      </section>
+    </div>
+    <ion-item *ngIf="!showEvent"  >
+      <h3 style="text-align:center;">There are no events to show</h3>
+    </ion-item>
+  </ion-list>
+</ion-content>

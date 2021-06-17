@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end head-text">
+        RCCG<br>AMERICAS
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="100vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item (click)="systemBrowse(americas)" color="light" class="ion-justify-content-end ion-text-center">
+      <ion-button slot="end" fill="clear" color="dark">
+        <ion-label>RCCG AMERICAS</ion-label>
+        <ion-icon slot="end" name="caret-forward-outline" color="dark"></ion-icon>
+      </ion-button>
+  </ion-item>
+  <ion-row class="ion-padding-horizontal">
+    <ion-col>
+      <div class="bg-asset flexItemX" (click)="navigate('asset',false)">
+        <ion-text class="tab-text">Asset Available For Donation</ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-padding-horizontal">
+    <ion-col>
+      <div class="bg-welfare flexItemX" (click)="navigate('welfare',false)">
+        <ion-text class="tab-text">Welfare</ion-text>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="bg-meeting flexItemX" (click)="navigate('meeting',false)">
+        <ion-text class="tab-text">Meetings</ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-padding-horizontal">
+    <ion-col>
+
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-padding-horizontal">
+    <ion-col size="8">
+      <div class="bg-socials flexItemX" (click)="navigate('socials',false)">
+        <ion-text class="tab-text">Social Media</ion-text>
+      </div>
+    </ion-col>
+    <ion-col size="4">
+      <div class="bg-livestream flexItemX" (click)="navigate('training',false)">
+        <ion-text class="tab-text">Training</ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-padding-horizontal">
+    <ion-col size="4">
+      <div class="bg-give flexItemX" (click)="navigate('give',true)">
+        <ion-text class="tab-text">Give</ion-text>
+      </div>
+    </ion-col>
+    <ion-col size="8">
+      <div class="bg-helpdesk flexItemX" (click)="navigate('helpdesk',false)">
+        <ion-text class="tab-text">Helpdesk</ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="ion-padding-horizontal">
+    <ion-col>
+      <div class="bg-events flexItemX" (click)="navigate('information',false)">
+        <ion-text class="tab-text">Information</ion-text>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="bg-credits flexItemX" (click)="navigate('credit',true)">
+        <ion-text class="tab-text">Credit Union</ion-text>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

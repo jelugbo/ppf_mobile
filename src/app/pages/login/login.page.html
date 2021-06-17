@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end head-text">
+        RCCG<br>AMERICAS
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="100vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top" >
+    <p style="line-height: 25vh; font-size: 24px; text-align: center">LOGIN</p>
+    <form [formGroup]="loginForm">
+      <ion-item>
+        <ion-label position="stacked">Email:</ion-label>
+        <ion-input formControlName="Email" type="email" [class.invalid]="!loginForm.controls.Email.valid && (loginForm.controls.Email.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!loginForm.controls.Email.valid  && (loginForm.controls.Email.dirty || submitAttempt)">
+        <p>Please enter a valid email address.</p>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked" >Password:</ion-label>
+        <ion-input formControlName="Password" type="password" [class.invalid]="!loginForm.controls.Password.valid && (loginForm.controls.Password.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!loginForm.controls.Password.valid  && (loginForm.controls.Password.dirty || submitAttempt)">
+        <p>Please enter your password.</p>
+      </ion-item>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12" class="ion-text-center">
+          <section>
+            <ion-button color="light" slot="start" (click)="login()">
+              Login
+            </ion-button>
+          </section>
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end head-text">
+        RCCG<br>AMERICAS
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="100vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top">
+    <img class="middlelogo" src="assets/img/notication.jpg">
+    <ion-item color="light">
+      <div class="ion-text-center center-me">
+        <h4>Subscribe to be notified</h4>
+      </div>
+    </ion-item>
+    <ion-item *ngFor="let i of itemList">
+      <ion-label>{{getValue(i,'GroupName')}}</ion-label>
+      <ion-toggle checked="{{getValue(i,'Enabled')}}" color="ppforum" (ionChange)=" onToggleChange(i,$event.detail)"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end head-text">
+        RCCG<br>AMERICAS
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="100vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top">
+    <img src="assets/img/welfare.jpg" alt="">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button shape="round" expand="block" color="ppf-light" (click)="addNew()">Request for Welfare Help</ion-button>
+      </ion-col>
+    </ion-row>
+    <div class="ion-padding" *ngFor="let item of itemList">
+      <p class="ion-padding-horizontal ion-no-margin small-pad-top" style="font-weight: bold">{{item.Title}}</p>
+      <p class="ion-padding-horizontal ion-no-margin small-pad-top">
+        <span  style="font-weight: bold">Posted By:</span> Pastor {{item.Pastor}}
+      </p>
+      <p class="ion-padding-horizontal ion-no-margin small-pad-top small-pad-bottom">
+        <span  style="font-weight: bold">Posted On:</span> {{item.CreatedAt | date: 'longDate'}}
+      </p>
+      <ion-item lines="none">
+        <ion-text><p class="ion-no-margin truncate">{{item.Description}}</p></ion-text>
+      </ion-item>
+      <ion-row>
+        <ion-col size="4">
+          <ion-button shape="round" expand="block" size="small" color="light" (click)="itemTapped(item)">Details</ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button shape="round" expand="block" size="small" color="light" (click)="requestor(item)">
+            I Can Help
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button shape="round" expand="block" size="small" color="light" (click)="shareUs(item)">Share
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-list>
+</ion-content>

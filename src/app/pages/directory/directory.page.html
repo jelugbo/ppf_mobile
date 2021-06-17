@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end head-text">
+        RCCG<br>AMERICAS
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="100vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top">
+    <img src="assets/img/directory.jpg" alt="">
+    <!-- Search Bar -->
+    <ion-searchbar placeholder="Filter Records" [(ngModel)]="term" animated="true"></ion-searchbar>
+    <div *ngFor="let item of directoryList | filter:term">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item lines="none">
+            <ion-avatar slot="start"><img src="{{getImage(item.Picture)}}"></ion-avatar>
+            <ion-label >
+              <h3>{{item.FirstName}} {{item.LastName}}</h3>
+              <p>RCCG {{item.Parish}}</p>
+              <p>{{item.City}}, {{item.State}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4" offset="8"><ion-button shape="round" expand="block" size="small" color="light" (click)="itemTapped(item)">Details</ion-button></ion-col>
+      </ion-row>
+    </div>
+  </ion-list>
+</ion-content>

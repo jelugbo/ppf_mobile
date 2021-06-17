@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="ppforum">
+
+    <ion-text>
+      <div class="ion-text-wrap ion-text-end ion-padding-end head-text">
+        RCCG<br>AMERICAS
+      </div>
+    </ion-text>
+    <ion-buttons slot="start" style="flex-flow: column">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text="Back" icon="caret-back"></ion-back-button>
+    </ion-buttons>
+    <img src="assets/img/rccg_logo.png" alt="" slot="end" width="100vw" class="ion-padding-vertical ion-padding-end">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="remove-top">
+    <!--<img class="middlelogo" src="assets/img/get_connected.jpg">-->
+    <ion-card *ngFor="let c of itemColumns; let i = index">
+      <ion-card-header color="light"><span style="font-weight: bold; font-size: 16px">{{c.title}}</span></ion-card-header>
+      <ion-card-content (click)="navigate(c.link,c.isURL)">
+        <ion-item lines="none">
+          {{c.text}}
+          <ion-icon slot="end" name="{{c.icon}}" (click)="navigate(c.link,c.isURL)"></ion-icon>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
